@@ -32,8 +32,8 @@ Password: Admin_8_8
 ---
 
 ## 📸 Screenshots
-![Login Page](SCa/Login.png)
-![Register Page](SCa/Register.png)
+![Login Page](SCs/Login.png)
+![Register Page](SCs/Register.png)
 ![Dashboard](SCs/Dash.png)
 ![Expense Page](SCs/Add.png)
 ![Report Page](SCs/Report.png)
