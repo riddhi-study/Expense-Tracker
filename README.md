@@ -32,7 +32,8 @@ Password: Admin_8_8
 ---
 
 ## 📸 Screenshots
-(Add your project screenshots here)
+
+
 
 ---
 
