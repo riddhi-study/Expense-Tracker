@@ -1,0 +1,187 @@
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8faf9; /* Off-white background [web:1] */
+    color: #013220; /* Dark green text [web:1] */
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #e9ede4 100%); /* White to light green gradient [web:1] */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(1, 50, 34, 0.1); /* Subtle dark green shadow */
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #013220; /* Dark green [web:1] */
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections */
+section {
+    padding: 40px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(1, 50, 34, 0.08);
+    margin-bottom: 30px;
+}
+
+section h2, section h3 {
+    color: #013220;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+section h3 {
+    font-size: 1.8rem;
+}
+
+/* Hero section specifics */
+section:first-of-type h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #046200; /* Medium dark green [web:1] */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* Buttons */
+input[type="submit"] {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(1, 50, 34, 0.2);
+}
+
+#btnRegister {
+    background: linear-gradient(135deg, #013220 0%, #004d14 100%); /* Dark to forest green [web:1] */
+    color: #ffffff;
+}
+
+#btnRegister:hover {
+    background: linear-gradient(135deg, #004d14 0%, #013220 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(1, 50, 34, 0.3);
+}
+
+#btnLogin {
+    background: linear-gradient(135deg, #e9ede4 0%, #f6f7f2 100%); /* Light greens/whites [web:1] */
+    color: #013220;
+    border: 2px solid #013220;
+}
+
+#btnLogin:hover {
+    background: linear-gradient(135deg, #f6f7f2 0%, #e9ede4 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(1, 50, 34, 0.15);
+}
+
+/* Features list */
+ul {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+ul li {
+    background: #f8faf9;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 5px solid #004d14; /* Forest green accent [web:1] */
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* HR lines */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #013220, transparent);
+    margin: 40px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #013220;
+    color: #f6f7f2;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+/* Footer layout */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Admin link */
+.admin-link {
+    color: #f6f7f2;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+    .admin-link:hover {
+        text-decoration: underline;
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 10px; }
+    header h1 { font-size: 2.2rem; }
+    section h2 { font-size: 1.8rem; }
+    asp\:Button { display: block; width: 100%; max-width: 300px; margin: 10px auto; }
+}
+
+
+ol {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    ol li {
+        background: #f8faf9;
+        padding: 20px;
+        margin: 15px 0;
+        border-left: 5px solid #004d14; /* Forest green accent [web:1] */
+        border-radius: 8px;
+        font-size: 1.1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
