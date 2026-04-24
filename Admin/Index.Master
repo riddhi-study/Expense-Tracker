@@ -1,0 +1,257 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="ExpenseTracker.Admin.Index" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <!--common css -->
+    <%--<link href="~/Content/styles.css" rel="stylesheet" runat="server" />--%>
+    <%--page specific css--%>
+    <link href="~/Content/admin-theme.css" rel="stylesheet" runat="server" />
+    <link href="~/Content/cat.css" rel="stylesheet" runat="server" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+<body class="sb-nav-fixed">
+
+
+
+    <form runat="server">
+        <nav class="navbar">
+            <div class="nav-left">
+                <%--<button class="menu-toggle" id="menuToggle"  ClientIDMode="Static">☰</button>--%>
+                <button type="button" class="menu-toggle" id="menuToggle">☰</button>
+
+                <div class="logo">Admin Dashboard</div>
+            </div>
+                <%--<div class="search-container">
+                    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search...">
+                </div>--%>
+            <div class="nav-right">
+                <div class="user-profile">AD</div>
+            </div>
+        </nav>
+
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Dashboard</h3>
+                <p>System Administrator</p>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="/Admin/Dashboard.aspx" class="menu-item">
+                    <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                    <span class="menu-text">Dashboard</span>
+                </a>
+                <a href="Category.aspx" class="menu-item">
+                  
+                      <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 14h6m-6 4h6M5 3h14a1 1 0 011 1v16l-3-2-3 2-3-2-3 2-3-2V4a1 1 0 011-1z">
+        </path>
+    </svg>
+                    <span class="menu-text">Expense categories</span>
+                </a>
+                <a href="Feedback.aspx" class="menu-item">
+                   
+                    <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 20l1.8-3.6A7.963 7.963 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+        </path>
+    </svg>
+                    <span class="menu-text">Feedback</span>
+                </a>
+               <%-- <a href="Contact.aspx" class="menu-item">
+                    <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="menu-text">Contact</span>
+                </a>--%>
+                <a href="Users.aspx" class="menu-item">
+                    <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="menu-text">Users</span>
+                </a>
+                <%--<a href="Logout.aspx" class="menu-item logout-item">
+                    <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    <span class="menu-text">Logout</span>
+                </a>--%>
+                <ul class="sidebar-menu">
+   <%-- <li class="menu-item">
+        <a href="Dashboard.aspx">Dashboard</a>
+    </li>--%>
+
+    <li class="menu-item logout-item">
+        <asp:LinkButton 
+            ID="btnLogout"
+            runat="server"
+            CssClass="logout-link"
+            OnClientClick="return confirm('Are you sure you want to logout?');"
+            OnClick="btnLogout_Click">
+            Logout
+        </asp:LinkButton>
+    </li>
+</ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <asp:ContentPlaceHolder ID="Admin1" runat="server">
+            </asp:ContentPlaceHolder>
+            <%--<div class="content-header">
+                <h1 class="content-title">Dashboard</h1>
+                <button class="table-btn">New Report</button>
+            </div>--%>
+
+           <%-- <div class="cards-grid">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <div class="card-title">Total Users</div>
+                        <div class="card-icon">📊</div>
+                    </div>
+                    <div class="card-value">$12,546</div>
+                    <div style="color: var(--text-muted); font-size: 14px;">+12% from last month</div>
+                </div>
+                <div class="card card-success">
+                    <div class="card-header">
+                        <div class="card-title">Total Expense Categories</div>--%>
+                        <%--<div class="card-icon">📈</div>--%>
+                  <%--  </div>--%>
+                    <%--<div class="card-value">1,234</div>
+                    <div style="color: var(--text-muted); font-size: 14px;">Active users</div>--%>
+               <%-- </div>
+                <div class="card card-warning">
+                    <div class="card-header">
+                        <div class="card-title">Total Feedbacks</div>--%>
+                        <%--<div class="card-icon">🌞</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="card-value">567</div>
+                    <div style="color: var(--text-muted); font-size: 14px;">New sessions</div>--%>
+                <%--</div>
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <div class="card-title">Total Contact Us</div>--%>
+                        <%--<div class="card-icon">⚠️</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="card-value">89</div>
+                    <div style="color: var(--text-muted); font-size: 14px;">Error rate</div>--%>
+                <%--</div>
+            </div>--%>
+
+           <%-- <div class="table-container">
+                <div class="table-header">
+                    <h2 class="table-title">Data Table Example</h2>
+                    <button class="table-btn">View All</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>--%>
+        </main>
+    </form>
+    
+    <script>
+        //alert("MASTER JS LOADED");
+        //document.addEventListener("DOMContentLoaded", function () {
+
+        //    alert("DOM READY");
+
+        //    console.log("menuToggle:", document.getElementById('menuToggle'));
+        //    console.log("sidebar:", document.getElementById('sidebar'));
+        //    console.log("overlay:", document.getElementById('sidebarOverlay'));
+        //    console.log("logout:", document.querySelector('.logout-item'));
+
+        //});
+        document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+        });
+
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        });
+
+        // Close sidebar on menu item click (mobile)
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    sidebar.classList.remove('active');
+                    sidebarOverlay.classList.remove('active');
+                }
+            });
+        });
+
+        // Logout functionality
+        //document.querySelector('.logout-item').addEventListener('click', (e) => {
+        //    e.preventDefault();
+        //    if (confirm('Are you sure you want to logout?')) {
+        //        // Add your logout logic here
+        //        alert('Logged out successfully!');
+        //    }
+        //});
+        });
+
+        const currentPage = location.pathname.split("/").pop().toLowerCase();
+
+        document.querySelectorAll(".menu-item").forEach(link => {
+            const linkPage = link.getAttribute("href").toLowerCase();
+
+            if (linkPage === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    </script>
+</body>
+
+</html>
